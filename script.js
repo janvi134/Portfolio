@@ -132,38 +132,34 @@ const form = document.getElementById('contactForm');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    formData.append("access_key", "67613ccf-e138-4d5f-9d5c-0e533dad0b65");
+  const formData = new FormData(form);
+  // append access_key if not already in HTML
+  // formData.append("access_key", "67613ccf-e138-4d5f-9d5c-0e533dad0b65");
 
-    const originalText = submitBtn.textContent;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
 
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
+  try {
+    const response = await fetch(form.action, { method: "POST", body: formData });
+    const data = await response.json();
 
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Success! Your message has been sent.");
-            form.reset();
-        } else {
-            alert("Error: " + data.message);
-        }
-
-    } catch (error) {
-        alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+    if (response.ok) {
+      alert("Success! Your message has been sent.");
+      form.reset();
+    } else {
+      alert("Error: " + data.message);
     }
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
 });
+
 
 const modal = document.getElementById('projectModal');
 const modalTitle = document.getElementById('modalTitle');
@@ -192,6 +188,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 modal.addEventListener('click', e => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
 
 
 
