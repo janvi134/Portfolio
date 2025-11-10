@@ -130,32 +130,32 @@ fetch('resume.pdf', { method: 'HEAD' })
 
 const form = document.getElementById('contactForm');
 const submitBtn = form.querySelector('button[type="submit"]');
+const statusEl = document.getElementById('cf-status');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  // append access_key if not already in HTML
-  // formData.append("access_key", "67613ccf-e138-4d5f-9d5c-0e533dad0b65");
 
-  const originalText = submitBtn.textContent;
   submitBtn.textContent = "Sending...";
   submitBtn.disabled = true;
+  statusEl.textContent = "";
 
   try {
-    const response = await fetch(form.action, { method: "POST", body: formData });
-    const data = await response.json();
+    const res = await fetch(form.action, { method: "POST", body: formData });
+    const data = await res.json();
 
-    if (response.ok) {
-      alert("Success! Your message has been sent.");
+    if (res.ok) {
+      statusEl.textContent = "✅ Success! Your message has been sent.";
       form.reset();
     } else {
-      alert("Error: " + data.message);
+      statusEl.textContent = "❌ Error: " + (data.message || "Unknown error");
     }
   } catch (err) {
-    alert("Something went wrong. Please try again.");
+    console.error(err);
+    statusEl.textContent = "❌ Something went wrong. Check network or access key.";
   } finally {
-    submitBtn.textContent = originalText;
+    submitBtn.textContent = "Send Message";
     submitBtn.disabled = false;
   }
 });
@@ -188,6 +188,7 @@ document.querySelector('.modal-close').addEventListener('click', () => {
 modal.addEventListener('click', e => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
 
 
 
