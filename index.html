@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Janvi S — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="top-controls">
+    <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌓</button>
+  </div>
+
+  <header class="hero section" id="home" role="banner">
+    <div class="hero-inner container">
+      <!-- Profile card (left on desktop, top on mobile) -->
+      <div class="profile-card fade-up" id="profileCard">
+        <div class="avatar" id="avatarWrap">
+          <img src="janvi.jpg" alt="Janvi S — Profile photo" id="avatarImg">
+        </div>
+        <div class="intro">
+          <h1 class="name">Janvi S</h1>
+          <p class="role"><span id="typed" aria-live="polite"></span></p>
+          <div class="hero-actions">
+            <a id="resumeBtn" class="btn primary" href="resume.pdf" download>Download Resume</a>
+            <a class="btn ghost" href="#projects">View Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero summary (right on desktop, below on mobile) -->
+      <div class="hero-summary fade-up">
+        <p>
+          Hello — I build interactive games and intelligent systems. I combine storytelling,
+          real-time tech and machine learning to create playful, useful experiences.
+        </p>
+        <ul class="socials">
+          <li><a href="https://github.com/dashboard" aria-label="GitHub">GitHub</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="mailto:janvi1346.s@gmail.com" aria-label="Email">Email</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <nav class="quick-nav container">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="about section container" id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <p>
+            I'm Janvi — a Game & AI/ML Developer and Creative Technologist. I love building interactive worlds,
+            implementing intelligent NPC behavior, and experimenting with ML for game systems and creative tools.
+          </p>
+          <p>
+            I am currently learning advanced game systems, Unreal Engine storytelling, and exploring
+            on-device ML workflows.
+          </p>
+        </div>
+
+        <div class="skills fade-up">
+          <h3>Skills</h3>
+          <div class="skill-item">
+            <label>HTML / CSS</label>
+            <div class="skill-bar"><div class="skill-fill" data-fill="95" aria-hidden="true"></div></div>
+          </div>
+          <div class="skill-item">
+            <label>JavaScript</label>
+            <div class="skill-bar"><div class="skill-fill" data-fill="90" aria-hidden="true"></div></div>
+          </div>
+          <div class="skill-item">
+            <label>Game Dev (Unreal/Blueprint)</label>
+            <div class="skill-bar"><div class="skill-fill" data-fill="85" aria-hidden="true"></div></div>
+          </div>
+          <div class="skill-item">
+            <label>AI / ML (Python)</label>
+            <div class="skill-bar"><div class="skill-fill" data-fill="80" aria-hidden="true"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section container" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card fade-up">
+          <img class="project-thumb" src="rakh.png" alt="Raakh project screenshot">
+          <div class="project-overlay">
+            <h3>Raakh: The Ashes of Truth — Part I</h3>
+            <p>Story-driven Unreal game with branching narrative.</p>
+            <a href="#" class="btn sm">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card fade-up">
+          <img class="project-thumb" src="ai.png" alt="AI Companion screenshot">
+          <div class="project-overlay">
+            <h3>AI Companion</h3>
+            <p>Conversational agent using on-device ML for adaptive advice.</p>
+            <a href="#" class="btn sm">Details</a>
+          </div>
+        </article>
+
+        <article class="project-card fade-up">
+          <img class="project-thumb" src="sound.jpg" alt="Interactive gallery screenshot">
+          <div class="project-overlay">
+            <h3>Interactive Gallery</h3>
+            <p>Generative visuals and sound-reactive scenes.</p>
+            <a href="#" class="btn sm">Details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery section container" id="gallery">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-grid fade-up">
+        <img src="https://placehold.co/600x420/e07b9b/ffffff?text=Raakh+Gameplay" alt="Raakh: The Ashes of Truth — Gameplay">
+        <img src="https://placehold.co/600x420/ff9dbf/0f0f12?text=AI+Companion+UI" alt="AI Companion interface with conversational flow">
+        <img src="https://placehold.co/600x420/f0b1c1/2b2430?text=Procedural+Level" alt="ML-generated game level layout">
+      </div>
+    </section>
+
+    <section class="testimonials section container" id="testimonials">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonial-cards fade-up">
+        <blockquote>
+          "Janvi's designs are thoughtful and technically impressive — a rare combination."
+        </blockquote>
+        <p class="author">— Mentor</p>
+      </div>
+    </section>
+
+    <section class="contact section container" id="contact">
+      <h2 class="section-title">Contact</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <p>Email: <a href="mailto:janvi1346.s@gmail.com">janvi1346.s@gmail.com</a></p>
+          <p>Location: India</p>
+        </div>
+
+        <form id="contactForm" class="contact-form fade-up" autocomplete="on" novalidate action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="67613ccf-e138-4d5f-9d5c-0e533dad0b65">
+          <label>
+            <span class="sr-only">Your name</span>
+            <input type="text" name="name" id="cf-name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span class="sr-only">Your email</span>
+            <input type="email" name="email" id="cf-email" placeholder="Your email" required>
+          </label>
+          <label>
+            <span class="sr-only">Message</span>
+            <textarea name="message" id="cf-message" placeholder="Message" rows="5" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send Message</button>
+            <button type="reset" class="btn ghost">Reset</button>
+          </div>
+          <p id="cf-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <img id="modalImg" src="" alt="">
+  </div>
+</div>
+
+
+  <footer class="contact section" id="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Janvi S — Game &amp; AI/ML Developer</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
