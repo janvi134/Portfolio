@@ -151,26 +151,27 @@
           <p>Location: India</p>
         </div>
 
-        <form id="contactForm" class="contact-form fade-up" autocomplete="on" novalidate action="https://api.web3forms.com/submit  " method="POST">
-          <input type="hidden" name="access_key" value="67613ccf-e138-4d5f-9d5c-0e533dad0b65">
-          <label>
-            <span class="sr-only">Your name</span>
-            <input type="text" name="name" id="cf-name" placeholder="Your name" required>
-          </label>
-          <label>
-            <span class="sr-only">Your email</span>
-            <input type="email" name="email" id="cf-email" placeholder="Your email" required>
-          </label>
-          <label>
-            <span class="sr-only">Message</span>
-            <textarea name="message" id="cf-message" placeholder="Message" rows="5" required></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Send Message</button>
-            <button type="reset" class="btn ghost">Reset</button>
-          </div>
-          <p id="cf-status" class="form-status" aria-live="polite"></p>
-        </form>
+        <form id="contactForm" class="contact-form fade-up" autocomplete="on" novalidate method="POST" action="https://api.web3forms.com/submit">
+  <input type="hidden" name="access_key" value="67613ccf-e138-4d5f-9d5c-0e533dad0b65">
+  <label>
+    <span class="sr-only">Your name</span>
+    <input type="text" name="name" id="cf-name" placeholder="Your name" required>
+  </label>
+  <label>
+    <span class="sr-only">Your email</span>
+    <input type="email" name="email" id="cf-email" placeholder="Your email" required>
+  </label>
+  <label>
+    <span class="sr-only">Message</span>
+    <textarea name="message" id="cf-message" placeholder="Message" rows="5" required></textarea>
+  </label>
+  <div class="form-actions">
+    <button type="submit" class="btn primary">Send Message</button>
+    <button type="reset" class="btn ghost">Reset</button>
+  </div>
+  <p id="cf-status" class="form-status" aria-live="polite"></p>
+</form>
+
       </div>
     </section>
   </main>
@@ -197,5 +198,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
